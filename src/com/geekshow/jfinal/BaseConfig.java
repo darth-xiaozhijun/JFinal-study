@@ -39,7 +39,8 @@ public class BaseConfig extends JFinalConfig {
 		me.add(dp);
 		ActiveRecordPlugin rp = new ActiveRecordPlugin(dp);
 		me.add(rp);
-		rp.addMapping("t_user", "id", User.class);
+//		rp.addMapping("t_user", "id", User.class);
+		rp.addMapping("t_user", User.class);
 		
 	}
 
