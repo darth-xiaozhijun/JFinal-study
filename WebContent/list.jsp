@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -21,8 +22,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <form action="/file/upload" enctype="multipart/form-data" method="post">
-    	文件名：<input type="file" name="file"/><input type="submit" value="上传"/>
-    </form>
+<table>
+	<tr>
+		<td>编号</td>
+		<td>姓名</td>
+		<td>年龄</td>
+		<td>生日</td>
+	</tr>
+	<c:forEach items="${list }" var="bean">
+		<tr>
+		<td>${bean.id }</td>
+		<td>${bean.name }</td>
+		<td>${bean.age }</td>
+		<td>${bean.birthday }</td>
+		</tr>
+	</c:forEach>
+</table>
   </body>
 </html>

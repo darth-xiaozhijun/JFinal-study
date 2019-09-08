@@ -21,8 +21,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <form action="/file/upload" enctype="multipart/form-data" method="post">
-    	文件名：<input type="file" name="file"/><input type="submit" value="上传"/>
-    </form>
+   	<form action="save" method="post">
+   	用户名：<input type="text" name="name"/><br>
+   	年龄:<input type="text" name="age"/><br>
+   	出生日期:<input type="text" name="birthday"/><br>
+   	<input type="submit" value="添加"/>
+   	</form>
   </body>
 </html>
