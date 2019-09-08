@@ -1,5 +1,6 @@
 package com.geekshow.jfinal;
 
+import com.geekshow.controller.FileUploadController;
 import com.geekshow.controller.HelloController;
 import com.geekshow.controller.UserController;
 import com.jfinal.config.Constants;
@@ -17,12 +18,14 @@ public class BaseConfig extends JFinalConfig {
 		//设置开发模式
 		constants.setDevMode(true);
 		constants.setViewType(ViewType.JSP);
+		constants.setUploadedFileSaveDirectory("my");
 	}
 	
 	public void configRoute(Routes routes) {
 		
 		routes.add("/hello", HelloController.class);
 		routes.add("/user", UserController.class);
+		routes.add("/", FileUploadController.class);
 	}
 	
 	public void configPlugin(Plugins me) {}
